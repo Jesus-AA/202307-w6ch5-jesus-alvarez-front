@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1693058357981" clover="3.2.0">
-  <project timestamp="1693058357982" name="All files">
+<coverage generated="1693059947059" clover="3.2.0">
+  <project timestamp="1693059947060" name="All files">
     <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="4" coveredelements="4" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1"/>
-    <file name="header.tsx" path="C:\Users\jalva\Desktop\bootcamp\Week 6\week6weekendfrontend\src\components\header\header.tsx">
+    <file name="footer.tsx" path="C:\Users\jalva\Desktop\bootcamp\Week 6\week6weekendfrontend\src\components\footer\footer.tsx">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
