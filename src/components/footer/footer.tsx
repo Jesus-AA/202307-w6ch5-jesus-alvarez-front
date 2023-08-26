@@ -1,6 +1,8 @@
+import styles from './footer.module.scss';
+
 export function Footer() {
   return (
-    <footer>
+    <footer className={styles['footer']}>
       <address>Created by Jesus Alvarez</address>
     </footer>
   );

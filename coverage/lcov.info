@@ -1,9 +1,9 @@
 TN:
-SF:src\components\header\header.tsx
-FN:3,Header
+SF:src\components\footer\footer.tsx
+FN:3,Footer
 FNF:1
 FNH:1
-FNDA:1,Header
+FNDA:1,Footer
 DA:1,1
 DA:3,1
 DA:4,1
