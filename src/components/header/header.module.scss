@@ -1,0 +1,14 @@
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #00713c;
+}
+h1 {
+  font-family: 'Chivo', sans-serif;
+  margin: 0;
+  padding: 1rem;
+  font-size: 3rem;
+  color: white;
+}
