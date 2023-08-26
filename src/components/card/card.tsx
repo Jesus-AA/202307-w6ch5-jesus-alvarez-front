@@ -1,4 +1,5 @@
 import { Player } from '../../model/player';
+import styles from './card.module.scss';
 
 type Props = {
   player: Player;
@@ -6,10 +7,10 @@ type Props = {
 
 export function Card({ player }: Props) {
   return (
-    <li>
-      <img></img>
-      <div>
-        <p>{player.name}</p>
+    <li className={styles['card']}>
+      <img src={player.img} width="200px"></img>
+      <div className={styles['name-div']}>
+        <p className={styles['player-name']}>{player.name}</p>
       </div>
     </li>
   );

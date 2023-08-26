@@ -1,8 +1,9 @@
 import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit';
+import playersReducer from '../redux/slice';
 
 export const appStore = configureStore({
   reducer: {
-    tennisPlayers: () => {},
+    tennisPlayers: playersReducer,
   },
 });
 

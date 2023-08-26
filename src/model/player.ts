@@ -4,5 +4,6 @@ export type Player = {
   tour: string;
   titles: number;
   prizemoney: number;
+  img: string;
   id: string;
 };

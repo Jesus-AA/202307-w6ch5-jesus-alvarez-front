@@ -1,0 +1,30 @@
+.card {
+  background-color: white;
+}
+.ul-div {
+  background-color: #583688;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url();
+  border: 7px solid #00713c;
+  gap: 0.5rem;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 15rem;
+  .name-div {
+    background-color: #583688;
+    border-radius: 1.5rem;
+    .player-name {
+      font-family: 'Chivo', sans-serif;
+      color: white;
+      font-size: 2rem;
+      padding: 1rem;
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
