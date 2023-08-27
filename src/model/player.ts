@@ -1,14 +1,8 @@
-export type IncomingPlayer = {
-  name: string;
-  nationality: string;
-  tour: string;
-  titles: number;
-  prizemoney: number;
-  img: string;
+export type PlayerWithId = {
   id: string;
 };
 
-export type AddedPlayer = {
+export type PlayerWithNoId = {
   name: string;
   nationality: string;
   tour: string;
@@ -16,3 +10,5 @@ export type AddedPlayer = {
   prizemoney: number;
   img: string;
 };
+
+export type Player = PlayerWithId & PlayerWithNoId;

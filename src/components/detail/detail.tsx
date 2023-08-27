@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { usePlayers } from '../../hooks/usePlayers';
-import { IncomingPlayer } from '../../model/player';
+import { Player } from '../../model/player';
 import styles from './detail.module.scss';
 
 export function Detail() {
@@ -10,7 +10,7 @@ export function Detail() {
 
   const character = playersState.players.find(
     (character) => character.id === id
-  ) as IncomingPlayer;
+  ) as Player;
 
   return (
     <div className={styles['main-detail-div']}>

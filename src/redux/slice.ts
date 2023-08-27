@@ -1,15 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IncomingPlayer } from '../model/player';
-import { loadThunk } from './playersthunks';
+import { Player } from '../model/player';
+import { addThunk, deleteThunk, loadThunk } from './playersthunks';
 
 export type PlayerState = {
-  players: IncomingPlayer[];
+  players: Player[];
   loadState: 'loading' | 'loaded' | 'error' | '';
+  error: Error | null;
 };
 
 const initialState: PlayerState = {
   players: [],
   loadState: '',
+  error: null,
 };
 
 const playersSlice = createSlice({
@@ -22,11 +24,35 @@ const playersSlice = createSlice({
     });
     builder.addCase(
       loadThunk.fulfilled,
-      (state, { payload }: { payload: IncomingPlayer[] }) => {
+      (state, { payload }: { payload: Player[] }) => {
         state.players = payload;
         state.loadState = 'loaded';
       }
     );
+    builder.addCase(
+      addThunk.fulfilled,
+      (state, { payload }: { payload: Player }) => {
+        state.players.push(payload);
+      }
+    );
+    builder.addCase(addThunk.rejected, (state) => {
+      const error = new Error('Error creating player');
+      state.loadState = 'error';
+      state.error = error;
+    });
+    builder.addCase(
+      deleteThunk.fulfilled,
+      (state, { payload }: { payload: Player['id'] }) => {
+        state.players = state.players.filter((item) => {
+          item.id !== payload;
+        });
+      }
+    );
+    builder.addCase(deleteThunk.rejected, (state) => {
+      const error = new Error('Error deleting notes');
+      state.loadState = 'error';
+      state.error = error;
+    });
   },
 });
 

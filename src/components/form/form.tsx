@@ -1,13 +1,16 @@
 import { SyntheticEvent } from 'react';
-import { AddedPlayer } from '../../model/player';
+import { usePlayers } from '../../hooks/usePlayers';
+import { PlayerWithNoId } from '../../model/player';
 import styles from './form.module.scss';
 
 export function Form() {
+  const { addPlayer } = usePlayers();
+
   const handleSubmit = (ev: SyntheticEvent) => {
     ev.preventDefault();
     const formElement = ev.currentTarget as HTMLFormElement;
 
-    const newPlayer: AddedPlayer = {
+    const newPlayer: PlayerWithNoId = {
       name: (formElement.elements.namedItem('name') as HTMLFormElement).value,
       nationality: (
         formElement.elements.namedItem('nationality') as HTMLFormElement
@@ -21,6 +24,7 @@ export function Form() {
       img: (formElement.elements.namedItem('img') as HTMLFormElement).value,
     };
     console.log(newPlayer);
+    addPlayer(newPlayer);
   };
 
   return (
