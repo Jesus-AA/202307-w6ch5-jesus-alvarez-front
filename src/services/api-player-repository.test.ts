@@ -8,7 +8,7 @@ describe('Given the ApiPlayerRepository Class', () => {
         ok: true,
         json: jest.fn().mockResolvedValue('Test'),
       });
-      repository.getAll();
+      repository.getAll('');
       expect(global.fetch).toHaveBeenCalled();
     });
     test('The method getAll() should be used', async () => {
@@ -17,7 +17,7 @@ describe('Given the ApiPlayerRepository Class', () => {
         json: jest.fn().mockResolvedValue('error'),
       });
 
-      expect(repository.getAll()).rejects.toThrow();
+      expect(repository.getAll('')).rejects.toThrow();
     });
   });
 });

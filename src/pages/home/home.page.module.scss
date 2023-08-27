@@ -1,0 +1,25 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.title {
+  font-family: 'Chivo', sans-serif;
+  font-size: 2rem;
+  color: #583688;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+.buttonPlayer {
+  font-family: 'Chivo', sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  background-color: #583688;
+  color: white;
+  border-radius: 25px;
+  padding: 1rem;
+  align-self: center;
+}

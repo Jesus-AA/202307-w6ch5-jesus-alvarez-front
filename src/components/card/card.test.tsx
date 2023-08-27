@@ -10,6 +10,7 @@ describe('Given the component Card', () => {
       tour: 'string',
       titles: 1,
       prizemoney: 1,
+      img: 'string',
       id: 'string',
     };
     render(<Card player={newPlayer}></Card>);
