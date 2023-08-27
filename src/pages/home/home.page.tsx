@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Home } from '../components/home/home';
+import { Home } from '../../components/home/home';
 import styles from './home.page.module.scss';
 
 function HomePage() {
@@ -12,7 +12,7 @@ function HomePage() {
         role="button"
         id="buttonPlayer"
         className={styles['buttonPlayer']}
-        to={'/'}
+        to={'/form'}
       >
         Add Player
       </Link>

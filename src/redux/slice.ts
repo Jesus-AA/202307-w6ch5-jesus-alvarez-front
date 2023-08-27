@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Player } from '../model/player';
+import { IncomingPlayer } from '../model/player';
 import { loadThunk } from './playersthunks';
 
 export type PlayerState = {
-  players: Player[];
+  players: IncomingPlayer[];
   loadState: 'loading' | 'loaded' | 'error' | '';
 };
 
@@ -22,7 +22,7 @@ const playersSlice = createSlice({
     });
     builder.addCase(
       loadThunk.fulfilled,
-      (state, { payload }: { payload: Player[] }) => {
+      (state, { payload }: { payload: IncomingPlayer[] }) => {
         state.players = payload;
         state.loadState = 'loaded';
       }

@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { Player } from '../../model/player';
+import { IncomingPlayer } from '../../model/player';
 
 const mockPlayers = [
   {
@@ -11,7 +11,7 @@ const mockPlayers = [
     img: 'url',
     id: 'uno',
   },
-] as Player[];
+] as IncomingPlayer[];
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

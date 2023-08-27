@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Player } from '../../model/player';
+import { IncomingPlayer } from '../../model/player';
 import styles from './card.module.scss';
 
 type Props = {
-  player: Player;
+  player: IncomingPlayer;
 };
 
 export function Card({ player }: Props) {

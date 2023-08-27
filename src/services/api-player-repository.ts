@@ -1,4 +1,4 @@
-import { Player } from '../model/player';
+import { IncomingPlayer } from '../model/player';
 
 export class ApiPlayerRepository {
   urlBase: string;
@@ -6,7 +6,7 @@ export class ApiPlayerRepository {
     this.urlBase = urlBase;
   }
 
-  async getAll(url: string): Promise<Player[]> {
+  async getAll(url: string): Promise<IncomingPlayer[]> {
     const request = await fetch(url);
     if (!request.ok) {
       throw new Error(
