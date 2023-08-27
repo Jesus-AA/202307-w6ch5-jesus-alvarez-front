@@ -1,7 +1,12 @@
 import { useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Player, PlayerWithNoId } from '../model/player';
-import { addThunk, deleteThunk, loadThunk } from '../redux/playersthunks';
+import {
+  addThunk,
+  deleteThunk,
+  loadThunk,
+  updateThunk,
+} from '../redux/playersthunks';
 import { ApiPlayerRepository } from '../services/api-player-repository';
 import { AppDispatch, RootState } from '../store/store';
 
@@ -29,10 +34,15 @@ export function usePlayers() {
     dispatch(deleteThunk({ repo, player }));
   };
 
+  const updatePlayer = async (player: Player) => {
+    dispatch(updateThunk({ repo, player }));
+  };
+
   return {
     loadPlayers,
     addPlayer,
     deletePlayer,
+    updatePlayer,
     playersState,
   };
 }

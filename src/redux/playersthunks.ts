@@ -33,3 +33,14 @@ export const deleteThunk = createAsyncThunk<
   await repo.delete(player.id);
   return player.id;
 });
+
+export const updateThunk = createAsyncThunk<
+  Player,
+  {
+    repo: ApiPlayerRepository;
+    player: Player;
+  }
+>('players/update', async ({ repo, player }) => {
+  const updatedPlayer = await repo.update(player.id, player);
+  return updatedPlayer;
+});
