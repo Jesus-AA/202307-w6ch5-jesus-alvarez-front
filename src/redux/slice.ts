@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { Player } from '../model/player';
-import { addThunk, deleteThunk, loadThunk } from './playersthunks';
+import { addThunk, deleteThunk, loadThunk, updateThunk } from './playersthunks';
 
 export type PlayerState = {
   players: Player[];
@@ -50,6 +50,19 @@ const playersSlice = createSlice({
     );
     builder.addCase(deleteThunk.rejected, (state) => {
       const error = new Error('Error deleting notes');
+      state.loadState = 'error';
+      state.error = error;
+    });
+    builder.addCase(
+      updateThunk.fulfilled,
+      (state, { payload }: { payload: Player }) => {
+        state.players = state.players.map((item) =>
+          item.id === payload.id ? payload : item
+        );
+      }
+    );
+    builder.addCase(updateThunk.rejected, (state) => {
+      const error = new Error('Error updating notes');
       state.loadState = 'error';
       state.error = error;
     });

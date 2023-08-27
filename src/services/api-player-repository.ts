@@ -40,4 +40,19 @@ export class ApiPlayerRepository {
     if (!response.ok)
       throw new Error(`Error ${response.status}: ${response.statusText}`);
   }
+
+  async update(id: string, item: Partial<Player>): Promise<Player> {
+    const url = this.urlBase + '/' + id;
+    const response = await fetch(url, {
+      method: 'PATCH',
+      body: JSON.stringify(item),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!response.ok)
+      throw new Error(`Error ${response.status}: ${response.statusText}`);
+    const data = await response.json();
+    return data;
+  }
 }

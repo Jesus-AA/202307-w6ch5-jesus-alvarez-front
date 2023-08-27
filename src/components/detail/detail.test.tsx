@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { PlayerWithId } from '../../model/player';
+import { Player } from '../../model/player';
 
 const mockPlayers = [
   {
@@ -11,7 +11,7 @@ const mockPlayers = [
     img: 'url',
     id: 'uno',
   },
-] as PlayerWithId[];
+] as Player[];
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -22,8 +22,10 @@ jest.mock('react-router-dom', () => ({
 
 describe('Given the component Detail', () => {
   describe('When it is rendered', () => {
-    const playerTest = {playerState: {
-      players: mockPlayers
-    },} as unknown as 
-  })
-})
+    const playerTest = {
+      playerState: {
+        players: mockPlayers,
+      },
+    } as unknown as appStore;
+  });
+});
