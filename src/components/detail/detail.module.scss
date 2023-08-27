@@ -1,0 +1,23 @@
+.main-detail-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.sec-detail-div {
+  font-family: 'Chivo', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.image {
+  align-items: center;
+  align-self: center;
+  border: 7px solid #583688;
+  border-radius: 1.5rem;
+  padding: 1rem;
+}

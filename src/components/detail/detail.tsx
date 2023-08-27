@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { usePlayers } from '../../hooks/usePlayers';
 import { Player } from '../../model/player';
+import styles from './detail.module.scss';
 
 export function Detail() {
   const { playersState } = usePlayers();
@@ -12,14 +13,14 @@ export function Detail() {
   ) as Player;
 
   return (
-    <div>
-      <img src={character.img}></img>
-      <div>
-        <p>{character.name}</p>
-        <p>{character.nationality}</p>
-        <p>{character.tour}</p>
-        <p>{character.titles}</p>
-        <p>{character.prizemoney}</p>
+    <div className={styles['main-detail-div']}>
+      <img className={styles['image']} src={character.img} width="350px"></img>
+      <div className={styles['sec-detail-div']}>
+        <p>Name: {character.name}</p>
+        <p>Country: {character.nationality}</p>
+        <p>Tour: {character.tour}</p>
+        <p>Titles: {character.titles}</p>
+        <p>Prize Money: ${character.prizemoney} </p>
       </div>
     </div>
   );
